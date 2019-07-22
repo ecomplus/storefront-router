@@ -1,2 +1,2 @@
 # storefront-router
-SPA router for E-Com Plus storefront
+SPA/SSR router for E-Com Plus storefront
