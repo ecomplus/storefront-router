@@ -1,16 +1,14 @@
 'use strict'
 
-const devMode = process.env.NODE_ENV !== 'production'
 const path = require('path')
 
 module.exports = {
-  mode: devMode ? 'development' : 'production',
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     library: '$router',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'router.js',
+    filename: 'router.min.js',
     globalObject: 'this'
   },
   devServer: {
@@ -31,5 +29,6 @@ module.exports = {
   stats: {
     colors: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  externals: /^(@babel\/runtime|core-js|@ecomplus\/(utils|client)|universal-router)/
 }
