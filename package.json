@@ -2,9 +2,14 @@
   "name": "@ecomplus/storefront-router",
   "version": "0.0.1",
   "description": "Universal JS router for E-Com Plus storefront",
-  "main": "src/index.js",
+  "main": "dist/router.min.js",
+  "module": "src/index.js",
+  "browser": "dist/router.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "serve": "webpack-dev-server",
+    "doc": "rm -rf ./docs/*; jsdoc ./src -r ./README.md -d ./docs -t ./node_modules/docdash",
+    "release": "rm -rf ./dist; npm run build & standard-version"
   },
   "repository": {
     "type": "git",
