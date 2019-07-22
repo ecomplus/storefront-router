@@ -1,0 +1,32 @@
+{
+  "name": "@ecomplus/storefront-router",
+  "version": "0.0.1",
+  "description": "Universal JS router for E-Com Plus storefront",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecomclub/storefront-router.git"
+  },
+  "keywords": [
+    "ecomplus",
+    "storefront",
+    "router",
+    "ecommerce",
+    "universal-app"
+  ],
+  "author": "E-Com Club <ti@e-com.club>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecomclub/storefront-router/issues"
+  },
+  "homepage": "https://github.com/ecomclub/storefront-router#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "husky": "^3.0.1",
+    "standard": "^13.1.0"
+  }
+}
