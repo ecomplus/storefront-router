@@ -24,40 +24,39 @@ import { mapBySlug, apiStore } from '@ecomplus/client'
 
 export default function () {
   // setup context object
-  this.context = {}
-  const context = this.context
+  const context = {}
+  this.content = context
+
+  // map function to return resource and object ID from slug
+  const map = slug => new Promise((resolve, reject) => {
+    // try to get current document info from global E-Com config first
+    const resource = _config.get('page_resource')
+    const _id = _config.get('page_object_id')
+    if (resource && _id) {
+      resolve({ resource, _id })
+    } else {
+      // map page resource and object based on received slug or window location
+      mapBySlug(slug).then(resolve).catch(reject)
+    }
+  })
+  this.map = map
 
   // resolve function to handle new route
   this.resolve = slug => new Promise((resolve, reject) => {
-    // try to get current document info from global E-Com config first
-    let resource = _config.get('page_resource')
-    let objectId = _config.get('page_object_id')
-
-    const getCurrentObject = () => {
-      // save resource on context
-      context.resource = resource
-      // get current page object from Store API
-      apiStore(`/${resource}/${objectId}.json`)
-        .then(({ data }) => {
-          // save object body on context
-          context.body = data
-          resolve(context)
-        })
-        .catch(reject)
-    }
-
-    if (resource && objectId) {
-      getCurrentObject()
-    } else {
-      // map page resource and object based on received slug or window location
-      mapBySlug(slug)
-        .then(page => {
-          resource = page.resource
-          objectId = page._id
-          getCurrentObject()
-        })
-        .catch(reject)
-    }
+    map(slug)
+      .then(({ resource, _id }) => {
+        // save resource on context
+        context.resource = resource
+        // get current page object from Store API
+        apiStore(`/${resource}/${_id}.json`)
+          .then(({ data }) => {
+            // save object body on context
+            context.body = data
+            resolve(context)
+          })
+          .catch(reject)
+      })
+      .catch(reject)
   })
 }
 
