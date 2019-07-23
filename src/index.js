@@ -6,6 +6,7 @@
 
 import { _config } from '@ecomplus/utils'
 import { mapBySlug, apiStore } from '@ecomplus/client'
+// import router from './lib/router'
 
 /**
  * Universal JS router for E-Com Plus storefront.
@@ -21,12 +22,13 @@ import { mapBySlug, apiStore } from '@ecomplus/client'
  * const Router = require('@ecomplus/storefront-router')
  */
 
-export default function (slug) {
+export default function () {
   // setup context object
   this.context = {}
   const context = this.context
 
-  return new Promise((resolve, reject) => {
+  // resolve function to handle new route
+  this.resolve = slug => new Promise((resolve, reject) => {
     // try to get current document info from global E-Com config first
     let resource = _config.get('page_resource')
     let objectId = _config.get('page_object_id')
@@ -39,7 +41,7 @@ export default function (slug) {
         .then(({ data }) => {
           // save object body on context
           context.body = data
-          resolve(data)
+          resolve(context)
         })
         .catch(reject)
     }
@@ -51,7 +53,7 @@ export default function (slug) {
       mapBySlug(slug)
         .then(page => {
           resource = page.resource
-          objectId = page.object_id
+          objectId = page._id
           getCurrentObject()
         })
         .catch(reject)
