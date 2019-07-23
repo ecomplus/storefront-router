@@ -23,12 +23,8 @@ import { mapBySlug, apiStore } from '@ecomplus/client'
  */
 
 export default function () {
-  // setup context object
-  const context = {}
-  this.context = context
-
   // map function to return resource and object ID from slug
-  const map = slug => new Promise((resolve, reject) => {
+  const map = path => new Promise((resolve, reject) => {
     // try to get current document info from global E-Com config first
     const resource = _config.get('page_resource')
     const _id = _config.get('page_object_id')
@@ -36,17 +32,17 @@ export default function () {
       resolve({ resource, _id })
     } else {
       // map page resource and object based on received slug or window location
+      const slug = typeof path === 'string' ? path.slice(1) : null
       mapBySlug(slug).then(resolve).catch(reject)
     }
   })
   this.map = map
 
   // resolve function to handle new route
-  this.resolve = slug => new Promise((resolve, reject) => {
-    map(slug)
-      .then(({ resource, _id }) => {
-        // save resource on context
-        context.resource = resource
+  this.resolve = path => new Promise((resolve, reject) => {
+    map(path)
+      .then(context => {
+        const { resource, _id } = context
         // get current page object from Store API
         apiStore(`/${resource}/${_id}.json`)
           .then(({ data }) => {
@@ -58,6 +54,9 @@ export default function () {
       })
       .catch(reject)
   })
+
+  // get list of all routes
+  this.list = () => Promise.resolve([])
 }
 
 /**
