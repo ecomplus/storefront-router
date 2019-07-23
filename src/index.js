@@ -25,7 +25,7 @@ import { mapBySlug, apiStore } from '@ecomplus/client'
 export default function () {
   // setup context object
   const context = {}
-  this.content = context
+  this.context = context
 
   // map function to return resource and object ID from slug
   const map = slug => new Promise((resolve, reject) => {
