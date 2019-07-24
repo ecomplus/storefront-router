@@ -32,5 +32,5 @@ module.exports = {
     colors: true
   },
   devtool: 'source-map',
-  externals: devMode ? '' : /^(@babel\/runtime|core-js|@ecomplus\/(utils|client)|universal-router)/
+  externals: devMode ? '' : /^(@babel\/runtime|core-js|@ecomplus\/(utils|client))/
 }
