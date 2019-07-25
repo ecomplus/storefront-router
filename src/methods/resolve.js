@@ -26,14 +26,17 @@ const resolve = (self, [route]) => new Promise((resolve, reject) => {
  * @name Router#resolve
  * @description Get [Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
  * document body based on route resource and Object ID.
+ * <br><br>
+ * <b>Tip</b>: Although resolve can be used standalone,
+ * you may want to use [map]{@link Router#map} method first.
  *
  * @param {route} route - Route object to get respective document body
  * @returns {Promise<context|error>}
  *
  * @example
 
-// Get document body for some URL pathname
-router.map('/slug')
+// Get document body for current URL pathname
+router.map()
   .then(route => {
     router.resolve(route)
       .then(context => {
