@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ecomclub/storefront-router#readme",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@ecomplus/client": "^0.7.1",
+    "@ecomplus/client": "^0.8.0",
     "@ecomplus/utils": "^0.6.0",
     "core-js": "^3.1.4"
   },
