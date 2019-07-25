@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/ecomclub/storefront-router/compare/v0.1.1...v0.2.0) (2019-07-25)
+
+
+### Bug Fixes
+
+* **resolve:** checking resource and _id from route obejct ([2a2c170](https://github.com/ecomclub/storefront-router/commit/2a2c170))
+
+
+### Features
+
+* **method:** handling 'list' method ([a29fb08](https://github.com/ecomclub/storefront-router/commit/a29fb08))
+
+
+
 ### [0.1.1](https://github.com/ecomclub/storefront-router/compare/v0.1.0...v0.1.1) (2019-07-25)
 
 
