@@ -36,7 +36,7 @@ export default self => new Promise((resolve, reject) => {
  * @name Router#list
  * @description List all storefront routes for product, categories, brands and collections.
  *
- * @returns {Promise<route|error>}
+ * @returns {Promise<route[]|error>}
  *
  * @example
 
