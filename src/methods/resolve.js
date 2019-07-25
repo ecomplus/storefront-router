@@ -4,13 +4,21 @@ const resolve = (self, [route]) => new Promise((resolve, reject) => {
   // handle new route
   const { storeId } = self
   const { resource, _id } = route
-  // get current page object from Store API
-  store({ url: `/${resource}/${_id}.json`, storeId })
-    .then(({ data }) => {
-      // save object body on context
-      resolve({ route, body: data })
-    })
-    .catch(reject)
+
+  if (resource && _id) {
+    // get current page object from Store API
+    store({ url: `/${resource}/${_id}.json`, storeId })
+      .then(({ data }) => {
+        // save object body on context
+        resolve({ route, body: data })
+      })
+      .catch(reject)
+  } else {
+    // skip request and just reject with new error
+    const err = new Error('Invalid route resource or object ID')
+    err.response = {}
+    reject(err)
+  }
 })
 
 /**
@@ -47,7 +55,7 @@ router.map()
         console.log(context.body._id)
         console.log(context.body.name)
       })
-      .catch(error => throw error)
+      .catch(error => { throw error })
   })
   .catch(error => {
     console.error(error)
