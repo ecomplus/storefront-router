@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>methods/resolve.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">methods/resolve.js</h1>
     
 
     
@@ -42,82 +42,64 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * https://github.com/ecomclub/storefront-router
- * @author E-Com Club &lt;ti@e-com.club>
- * @license MIT
- */
+            <pre class="prettyprint source linenums"><code>import { store } from '@ecomplus/client'
 
-import { _config } from '@ecomplus/utils'
-import map from './methods/map'
-import resolve from './methods/resolve'
-import list from './methods/list'
-import setupStore from './methods/setup-store'
-
-/**
- * Universal JS router for E-Com Plus storefront.
- * @module @ecomplus/storefront-router
- * @see Router
- *
- * @example
- * // ES import
- * import Router from '@ecomplus/storefront-router'
- *
- * @example
- * // With CommonJS
- * const Router = require('@ecomplus/storefront-router')
- */
-
-export default function (
-  storeId = _config.get('store_id'),
-  location = typeof window === 'object' &amp;&amp; window.location
-) {
-  const self = this
-
-  /**
-   * Respective Store ID number
-   * @name Router#storeId
-   * @type {number|undefined}
-   */
-  this.storeId = storeId
-
-  this.map = function () {
-    return map(self, arguments)
-  }
-
-  this.resolve = function () {
-    return resolve(self, arguments)
-  }
-
-  this.list = function () {
-    return list(self, arguments)
-  }
-
-  this.setupStore = function () {
-    return setupStore(self, arguments)
-  }
-}
+const resolve = (self, [route]) => new Promise((resolve, reject) => {
+  // handle new route
+  const { storeId } = self
+  const { resource, _id } = route
+  // get current page object from Store API
+  store({ url: `/${resource}/${_id}.json`, storeId })
+    .then(({ data }) => {
+      // save object body on context
+      resolve({ route, body: data })
+    })
+    .catch(reject)
+})
 
 /**
- * Construct a new storefront router object.
- * @class Router
- * @param {number} [storeId=_config.get('store_id')] - Preset Store ID number
- * @param {object} [location=window.location] -
- * [Location interface]{@link https://developer.mozilla.org/en-US/docs/Web/API/Location}
+ * @typedef {object} context
+ * @property {route} route - Context route object
+ * @property {object} body - Context
+ * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
+ * document body for respective route
+ */
+
+/**
+ * @method
+ * @name Router#resolve
+ * @description Get [Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
+ * document body based on route resource and Object ID.
+ *
+ * @param {route} route - Route object to get respective document body
+ * @returns {Promise&lt;context|error>}
  *
  * @example
 
-const router = new Router()
-
- *
- * @example
-
-// Defining Store ID and using custom location interface
-const storeId = 2000
-const router = new Router(storeId, DOM.location)
-// P.S.: You may want to use custom location when using jsdom on Node.js for example
+// Get document body for some URL pathname
+router.map('/slug')
+  .then(route => {
+    router.resolve(route)
+      .then(context => {
+        console.log(context)
+        console.log(context.route)
+        console.log(context.route.resource)
+        console.log(context.body)
+        console.log(context.body._id)
+        console.log(context.body.name)
+      })
+      .catch(error => throw error)
+  })
+  .catch(error => {
+    console.error(error)
+    if (error.response) {
+      console.log(error.response)
+    }
+  })
 
  */
+
+export default resolve
 </code></pre>
         </article>
     </section>
