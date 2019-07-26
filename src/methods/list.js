@@ -18,12 +18,12 @@ export default self => new Promise((resolve, reject) => {
         if (Array.isArray(result)) {
           result.forEach(({ _id, slug }) => {
             if (slug) {
-              // add new route object
-              routes.push({
-                resource,
-                _id,
-                path: '/' + slug
-              })
+              // check it this path is not already in use
+              const path = '/' + slug
+              if (!routes.find(route => route.path === path)) {
+                // add new route object
+                routes.push({ resource, _id, path })
+              }
             }
           })
         }
