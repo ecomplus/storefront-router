@@ -10,7 +10,7 @@ const resolve = (self, [route]) => new Promise((resolve, reject) => {
     store({ url: `/${resource}/${_id}.json`, storeId })
       .then(({ data }) => {
         // save object body on context
-        resolve({ route, body: data })
+        resolve({ resource, body: data })
       })
       .catch(reject)
   } else {
@@ -23,7 +23,8 @@ const resolve = (self, [route]) => new Promise((resolve, reject) => {
 
 /**
  * @typedef {object} context
- * @property {route} route - Context route object
+ * @property {string} resource - Context resource type from
+ * [E-Com Plus Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
  * @property {object} body - Context
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
  * document body for respective route
@@ -49,8 +50,7 @@ router.map()
     router.resolve(route)
       .then(context => {
         console.log(context)
-        console.log(context.route)
-        console.log(context.route.resource)
+        console.log(context.resource)
         console.log(context.body)
         console.log(context.body._id)
         console.log(context.body.name)
