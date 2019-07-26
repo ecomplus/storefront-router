@@ -15,12 +15,14 @@ export default self => new Promise((resolve, reject) => {
     promises.push(
       store({ url: `/${resource}.json`, storeId }).then(response => {
         const { _id, slug } = response.data
-        // add new route object
-        routes.push({
-          resource,
-          _id,
-          path: '/' + slug
-        })
+        if (slug) {
+          // add new route object
+          routes.push({
+            resource,
+            _id,
+            path: '/' + slug
+          })
+        }
       })
     )
   })
