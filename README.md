@@ -19,5 +19,7 @@ on browser or server side to render the page markup;
 
 It's available for both Node.js and browser environments.
 
+> For browser, it **must** be used with a bundler like Webpack or Browserify.
+
 - [Get started](https://developers.e-com.plus/storefront-router/module-@ecomplus_storefront-router.html)
 - [Router constructor](https://developers.e-com.plus/storefront-router/Router.html)
