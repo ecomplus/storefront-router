@@ -7,8 +7,9 @@ module.exports = {
   mode: devMode ? 'development' : 'production',
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
-    library: '$router',
+    library: 'Router',
     libraryTarget: 'umd',
+    libraryExport: 'default',
     path: path.resolve(__dirname, 'dist'),
     filename: 'router.min.js',
     globalObject: 'this'
