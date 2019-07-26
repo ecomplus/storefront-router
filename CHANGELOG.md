@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/ecomclub/storefront-router/compare/v0.2.5...v0.3.0) (2019-07-26)
+
+
+### Build System
+
+* **webpack:** fixing webpack output config, exporting the constructor ([9ddace8](https://github.com/ecomclub/storefront-router/commit/9ddace8))
+
+
+### Tests
+
+* **fix:** using global Router constructor ([055211c](https://github.com/ecomclub/storefront-router/commit/055211c))
+
+
+### BREAKING CHANGES
+
+* **webpack:** changed lib returned output
+
+
+
 ### [0.2.5](https://github.com/ecomclub/storefront-router/compare/v0.2.4...v0.2.5) (2019-07-26)
 
 
