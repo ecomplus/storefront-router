@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/ecomclub/storefront-router/compare/v0.3.0...v0.3.1) (2019-07-26)
+
+
+### Build System
+
+* **webpack:** extend webpack for outputs with and without polyfill ([a1726ef](https://github.com/ecomclub/storefront-router/commit/a1726ef))
+
+
+### Tests
+
+* **fix:** fix test html file importing correct js script ([5799c58](https://github.com/ecomclub/storefront-router/commit/5799c58))
+
+
+
 ## [0.3.0](https://github.com/ecomclub/storefront-router/compare/v0.2.5...v0.3.0) (2019-07-26)
 
 
