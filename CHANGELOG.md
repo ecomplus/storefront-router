@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/ecomclub/storefront-router/compare/v0.2.3...v0.2.4) (2019-07-26)
+
+
+### Bug Fixes
+
+* **list:** check it this path is not already in use ([60c1a13](https://github.com/ecomclub/storefront-router/commit/60c1a13))
+
+
+
 ### [0.2.3](https://github.com/ecomclub/storefront-router/compare/v0.2.2...v0.2.3) (2019-07-26)
 
 
