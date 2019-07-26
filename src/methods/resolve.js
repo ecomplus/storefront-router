@@ -32,12 +32,12 @@ const resolve = (self, [route]) => new Promise((resolve, reject) => {
 
 /**
  * @method
- * @name Router#resolve
+ * @name StorefrontRouter#resolve
  * @description Get [Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
  * document body based on route resource and Object ID.
  * <br><br>
  * <b>Tip</b>: Although resolve can be used standalone,
- * you may want to use [map]{@link Router#map} method first.
+ * you may want to use [map]{@link StorefrontRouter#map} method first.
  *
  * @param {route} route - Route object to get respective document body
  * @returns {Promise<context|error>}
