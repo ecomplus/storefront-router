@@ -14,13 +14,17 @@ export default self => new Promise((resolve, reject) => {
   ].forEach(resource => {
     promises.push(
       store({ url: `/${resource}.json`, storeId }).then(response => {
-        const { _id, slug } = response.data
-        if (slug) {
-          // add new route object
-          routes.push({
-            resource,
-            _id,
-            path: '/' + slug
+        const { result } = response.data
+        if (Array.isArray(result)) {
+          result.forEach(({ _id, slug }) => {
+            if (slug) {
+              // add new route object
+              routes.push({
+                resource,
+                _id,
+                path: '/' + slug
+              })
+            }
           })
         }
       })
