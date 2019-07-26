@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/ecomclub/storefront-router/compare/v0.2.2...v0.2.3) (2019-07-26)
+
+
+### Bug Fixes
+
+* **list:** checking from slug prop on data ([1486763](https://github.com/ecomclub/storefront-router/commit/1486763))
+* **list:** handling list responses correcly (result array) ([4f2483f](https://github.com/ecomclub/storefront-router/commit/4f2483f))
+
+
+
 ### [0.2.2](https://github.com/ecomclub/storefront-router/compare/v0.2.1...v0.2.2) (2019-07-26)
 
 
