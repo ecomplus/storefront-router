@@ -25,7 +25,8 @@ import setupStore from './methods/setup-store'
  *
  * @example
  * <!-- Global `StorefrontRouter` from CDN on browser -->
- * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router"></script>
+ * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/storefront-router.polyfill.min.js">
+ * </script>
  */
 
 export default function (
