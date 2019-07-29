@@ -43,7 +43,7 @@ export default function (storeId = _store, location = _location) {
 
   /**
    * [Location interface]{@link https://developer.mozilla.org/en-US/docs/Web/API/Location}
-   * @name EcomRouter#storeId
+   * @name EcomRouter#location
    * @type {object}
    */
   this.location = location
