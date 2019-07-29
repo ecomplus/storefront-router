@@ -37,7 +37,7 @@ export default function (
   /**
    * Respective Store ID number
    * @name EcomRouter#storeId
-   * @type {number|undefined}
+   * @type {number}
    */
   this.storeId = storeId
 
