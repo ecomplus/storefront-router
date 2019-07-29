@@ -5,11 +5,11 @@ const path = require('path')
 
 // preset default output object
 const output = {
-  library: 'StorefrontRouter',
+  library: 'EcomRouter',
   libraryTarget: 'umd',
   libraryExport: 'default',
   path: path.resolve(__dirname, 'dist'),
-  filename: 'storefront-router.min.js',
+  filename: 'ecom-router.min.js',
   globalObject: 'this'
 }
 
@@ -50,8 +50,19 @@ module.exports = devMode
       ...config,
       output: {
         ...output,
-        filename: output.filename.replace('.min.js', '.polyfill.min.js')
+        filename: output.filename.replace('.min.js', '.browser.min.js')
       },
-      externals: /^(@ecomplus\/(utils|client))/
+      externals: [{
+        '@ecomplus/utils': {
+          commonjs: '@ecomplus/utils',
+          commonjs2: '@ecomplus/utils',
+          root: 'ecomUtils'
+        },
+        '@ecomplus/client': {
+          commonjs: '@ecomplus/client',
+          commonjs2: '@ecomplus/client',
+          root: 'ecomClient'
+        }
+      }]
     }
   ]
