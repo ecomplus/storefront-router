@@ -20,4 +20,4 @@ on browser or server side to render the page markup;
 It's available for both Node.js and browser environments.
 
 - [Get started](https://developers.e-com.plus/storefront-router/module-@ecomplus_storefront-router.html)
-- [Class reference](https://developers.e-com.plus/storefront-router/StorefrontRouter.html)
+- [Class reference](https://developers.e-com.plus/storefront-router/EcomRouter.html)
