@@ -45,7 +45,7 @@ const setupStore = (self, [domain, updateConfig = true]) => {
 
 /**
  * @method
- * @name StorefrontRouter#setupStore
+ * @name EcomRouter#setupStore
  * @description Get Store IDs and default lang (and set on `_config`) based on domain name.
  *
  * @param {string} [domain=location.hostname] - Sales channel domain name

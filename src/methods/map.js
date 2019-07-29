@@ -45,7 +45,7 @@ const map = (self, [path]) => {
 
 /**
  * @method
- * @name StorefrontRouter#map
+ * @name EcomRouter#map
  * @description Get page resource and object ID based on URL pathname.
  *
  * @param {string} [path=location.pathname] - URL pathname

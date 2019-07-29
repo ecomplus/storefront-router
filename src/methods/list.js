@@ -39,7 +39,7 @@ export default self => new Promise((resolve, reject) => {
 
 /**
  * @method
- * @name StorefrontRouter#list
+ * @name EcomRouter#list
  * @description List all storefront routes for product, categories, brands and collections.
  *
  * @returns {Promise<route[]|error>}

@@ -13,20 +13,19 @@ import setupStore from './methods/setup-store'
 /**
  * Universal JS router for E-Com Plus storefront.
  * @module @ecomplus/storefront-router
- * @see StorefrontRouter
+ * @see EcomRouter
  *
  * @example
  * // ES import
- * import StorefrontRouter from '@ecomplus/storefront-router'
+ * import EcomRouter from '@ecomplus/storefront-router'
  *
  * @example
  * // With CommonJS
- * const StorefrontRouter = require('@ecomplus/storefront-router')
+ * const EcomRouter = require('@ecomplus/storefront-router')
  *
  * @example
- * <!-- Global `StorefrontRouter` from CDN on browser -->
- * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/storefront-router.polyfill.min.js">
- * </script>
+ * <!-- Global `EcomRouter` from CDN on browser -->
+ * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.root.min.js"></script>
  */
 
 export default function (
@@ -37,7 +36,7 @@ export default function (
 
   /**
    * Respective Store ID number
-   * @name StorefrontRouter#storeId
+   * @name EcomRouter#storeId
    * @type {number|undefined}
    */
   this.storeId = storeId
@@ -61,21 +60,21 @@ export default function (
 
 /**
  * Construct a new storefront router object.
- * @class StorefrontRouter
+ * @class EcomRouter
  * @param {number} [storeId=_config.get('store_id')] - Preset Store ID number
  * @param {object} [location=window.location] -
  * [Location interface]{@link https://developer.mozilla.org/en-US/docs/Web/API/Location}
  *
  * @example
 
-const router = new StorefrontRouter()
+const router = new EcomRouter()
 
  *
  * @example
 
 // Defining Store ID and using custom location interface
 const storeId = 2000
-const router = new StorefrontRouter(storeId, DOM.location)
+const router = new EcomRouter(storeId, DOM.location)
 // P.S.: You may want to use custom location when using jsdom on Node.js for example
 
  */
