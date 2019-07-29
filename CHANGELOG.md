@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/ecomclub/storefront-router/compare/v0.3.2...v0.4.0) (2019-07-29)
+
+
+### Build System
+
+* **webpack:** edit output filename ([c348db4](https://github.com/ecomclub/storefront-router/commit/c348db4))
+* **webpack:** fix webpack config for browser output and global var ([1278b95](https://github.com/ecomclub/storefront-router/commit/1278b95))
+
+
+### BREAKING CHANGES
+
+* **webpack:** changed global variable (EcomRouter)
+
+
+
 ### [0.3.2](https://github.com/ecomclub/storefront-router/compare/v0.3.1...v0.3.2) (2019-07-26)
 
 
