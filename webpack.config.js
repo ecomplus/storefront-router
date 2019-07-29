@@ -50,9 +50,9 @@ module.exports = devMode
       ...config,
       output: {
         ...output,
-        filename: output.filename.replace('.min.js', '.browser.min.js')
+        filename: output.filename.replace('.min.js', '.root.min.js')
       },
-      externals: [{
+      externals: {
         '@ecomplus/utils': {
           commonjs: '@ecomplus/utils',
           commonjs2: '@ecomplus/utils',
@@ -63,6 +63,6 @@ module.exports = devMode
           commonjs2: '@ecomplus/client',
           root: 'ecomClient'
         }
-      }]
+      }
     }
   ]
