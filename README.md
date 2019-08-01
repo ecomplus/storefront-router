@@ -21,3 +21,14 @@ It's available for both Node.js and browser environments.
 
 - [Get started](https://developers.e-com.plus/storefront-router/module-@ecomplus_storefront-router.html)
 - [Class reference](https://developers.e-com.plus/storefront-router/EcomRouter.html)
+
+### Dependencies
+
+It requires and doesn't include
+[`@ecomplus/utils`](https://github.com/ecomclub/ecomplus-utils) and
+[`@ecomplus/client`](https://github.com/ecomclub/ecomplus-client).
+
+It'll be automatically imported if you're developing on Node.js
+environment or using a bundler such as Webpack,
+**in other case those libraries must be included manually on
+window scope**.
