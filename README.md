@@ -26,7 +26,7 @@ It's available for both Node.js and browser environments.
 
 ```js
 const router = new EcomRouter()
-// Example resolving all routes
+// Simple example resolving all routes
 router.list()
   .then(routes => {
     routes.forEach(route => {
