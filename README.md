@@ -22,6 +22,30 @@ It's available for both Node.js and browser environments.
 - [Get started](https://developers.e-com.plus/storefront-router/module-@ecomplus_storefront-router.html)
 - [Class reference](https://developers.e-com.plus/storefront-router/EcomRouter.html)
 
+### Example
+
+```js
+const router = new EcomRouter()
+// Example resolving all routes
+router.list()
+  .then(routes => {
+    routes.forEach(route => {
+      console.log(route.resource)
+      router.resolve(route)
+        .then(context => {
+          console.log(context.body)
+        })
+        .catch(error => { throw error })
+    })
+  })
+  .catch(error => {
+    console.error(error)
+    if (error.response) {
+      console.log(error.response)
+    }
+  })
+```
+
 ### Dependencies
 
 It requires and doesn't include
