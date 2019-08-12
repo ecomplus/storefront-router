@@ -32,9 +32,9 @@
   "homepage": "https://github.com/ecomclub/storefront-router#readme",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@ecomplus/client": "^0.8.0",
-    "@ecomplus/utils": "^0.6.1",
-    "core-js": "^3.1.4"
+    "@ecomplus/client": "^1.0.1",
+    "@ecomplus/utils": "^1.0.1",
+    "core-js": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -44,13 +44,13 @@
     "@commitlint/config-conventional": "^8.1.0",
     "babel-loader": "^8.0.6",
     "docdash": "^1.1.1",
-    "husky": "^3.0.1",
+    "husky": "^3.0.3",
     "jsdoc": "^3.6.3",
     "standard": "^13.1.0",
     "standard-version": "^6.0.1",
-    "webpack": "^4.38.0",
+    "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.8.0"
   },
   "husky": {
     "hooks": {
