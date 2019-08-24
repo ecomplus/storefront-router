@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/ecomclub/storefront-router/compare/v1.0.0...v1.0.1) (2019-08-24)
+
+
+### Bug Fixes
+
+* **constructor:** fix gettings store id from config dynamically ([098dd63](https://github.com/ecomclub/storefront-router/commit/098dd63))
+
+
+
 ## [1.0.0](https://github.com/ecomclub/storefront-router/compare/v0.4.3...v1.0.0) (2019-08-12)
 
 
