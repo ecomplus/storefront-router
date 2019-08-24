@@ -28,10 +28,7 @@ import setupStore from './methods/setup-store'
  * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.root.min.js"></script>
  */
 
-const _store = _config.get('store_id')
-const _location = typeof window === 'object' && window.location
-
-export default function (storeId = _store, location = _location) {
+export default function (storeId, location = typeof window === 'object' && window.location) {
   const self = this
 
   /**
@@ -39,7 +36,7 @@ export default function (storeId = _store, location = _location) {
    * @name EcomRouter#storeId
    * @type {number}
    */
-  this.storeId = storeId
+  this.storeId = storeId || _config.get('store_id')
 
   /**
    * [Location interface]{@link https://developer.mozilla.org/en-US/docs/Web/API/Location}
