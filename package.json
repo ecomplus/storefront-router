@@ -1,6 +1,6 @@
 {
   "name": "@ecomplus/storefront-router",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Universal JS router for E-Com Plus storefront",
   "main": "dist/ecom-router.min.js",
   "module": "src/index.js",
