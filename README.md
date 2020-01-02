@@ -48,11 +48,29 @@ router.list()
 
 ### Dependencies
 
-It requires and doesn't include
-[`@ecomplus/utils`](https://github.com/ecomclub/ecomplus-utils) and
-[`@ecomplus/client`](https://github.com/ecomclub/ecomplus-client).
+It requires and _may not_ include:
 
-It'll be automatically imported if you're developing on Node.js
-environment or using a bundler such as Webpack,
-**in other case those libraries must be included manually on
-window scope**.
+- `core-js`;
+- [`@ecomplus/utils`](https://github.com/ecomclub/ecomplus-utils);
+- [`@ecomplus/client`](https://github.com/ecomclub/ecomplus-client);
+
+#### Node.js
+
+```bash
+npm i --save @ecomplus/utils @ecomplus/storefront-router
+```
+
+#### Webpack
+
+```bash
+npm i --save core-js @ecomplus/utils @ecomplus/storefront-router
+```
+
+#### CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.var.min.js"></script>
+```
+
+`ecomUtils` and `ecomClient` libraries
+**must be included separately** and available on window scope.
