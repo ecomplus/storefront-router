@@ -1,22 +1,14 @@
 /**
- * https://github.com/ecomclub/storefront-router
- * @author E-Com Club <ti@e-com.club>
- * @license MIT
- */
-
-import { _config } from '@ecomplus/utils'
-import map from './methods/map'
-import resolve from './methods/resolve'
-import list from './methods/list'
-import setupStore from './methods/setup-store'
-
-/**
  * Universal JS router for E-Com Plus storefront.
+ * {@link https://github.com/ecomclub/storefront-router GitHub}
+ *
  * @module @ecomplus/storefront-router
+ * @author E-Com Club <ti@e-com.club>
+ * @return {@link EcomRouter}
  * @see EcomRouter
  *
  * @example
- * // ES import
+ * // ES import default
  * import EcomRouter from '@ecomplus/storefront-router'
  *
  * @example
@@ -25,8 +17,20 @@ import setupStore from './methods/setup-store'
  *
  * @example
  * <!-- Global `EcomRouter` from CDN on browser -->
- * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.root.min.js"></script>
+ * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.var.min.js"></script>
+ *
+ * @example
+ * <!-- Bundle from CDN with `ecomUtils` and `ecomClient` -->
+ * <script
+ *   src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.bundle.min.js"
+ * ></script>
  */
+
+import { $ecomConfig } from '@ecomplus/utils'
+import map from './methods/map'
+import resolve from './methods/resolve'
+import list from './methods/list'
+import setupStore from './methods/setup-store'
 
 export default function (storeId, location = typeof window === 'object' && window.location) {
   const self = this
@@ -36,7 +40,7 @@ export default function (storeId, location = typeof window === 'object' && windo
    * @name EcomRouter#storeId
    * @type {number}
    */
-  this.storeId = storeId || _config.get('store_id')
+  this.storeId = storeId || $ecomConfig.get('store_id')
 
   /**
    * [Location interface]{@link https://developer.mozilla.org/en-US/docs/Web/API/Location}
