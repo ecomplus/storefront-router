@@ -3,7 +3,6 @@
 const devMode = process.env.NODE_ENV !== 'production'
 const path = require('path')
 
-// preset default output object
 const output = {
   library: 'EcomRouter',
   libraryTarget: 'umd',
@@ -13,7 +12,6 @@ const output = {
   globalObject: 'this'
 }
 
-// base Webpack config
 const config = {
   mode: devMode ? 'development' : 'production',
   entry: path.resolve(__dirname, 'src/index.js'),
@@ -36,33 +34,46 @@ const config = {
   stats: {
     colors: true
   },
-  devtool: 'source-map',
-  externals: devMode ? '' : /^(@babel\/runtime|core-js|@ecomplus\/(utils|client))/
+  devtool: 'source-map'
 }
 
-module.exports = devMode
-  // single config object for dev server
-  ? config
-  // production outputs with and without polyfill
-  : [
-    config,
-    {
-      ...config,
-      output: {
-        ...output,
-        filename: output.filename.replace('.min.js', '.root.min.js')
-      },
-      externals: {
-        '@ecomplus/utils': {
-          commonjs: '@ecomplus/utils',
-          commonjs2: '@ecomplus/utils',
-          root: 'ecomUtils'
-        },
-        '@ecomplus/client': {
-          commonjs: '@ecomplus/client',
-          commonjs2: '@ecomplus/client',
-          root: 'ecomClient'
-        }
-      }
+module.exports = devMode ? config : [
+  {
+    ...config,
+    externals: /^(core-js|@ecomplus\/utils|@ecomplus\/client)/i
+  },
+
+  {
+    ...config,
+    output: {
+      ...output,
+      filename: output.filename.replace('.min.js', '.bundle.min.js')
     }
-  ]
+  },
+
+  {
+    ...config,
+    target: 'node',
+    optimization: {
+      minimize: false
+    },
+    output: {
+      ...output,
+      filename: output.filename.replace('.min.js', '.node.js')
+    },
+    externals: /^(@ecomplus\/utils|@ecomplus\/client)/i
+  },
+
+  {
+    ...config,
+    output: {
+      ...output,
+      libraryTarget: 'var',
+      filename: output.filename.replace('.min.js', '.var.min.js')
+    },
+    externals: {
+      '@ecomplus/utils': 'ecomUtils',
+      '@ecomplus/client': 'ecomClient'
+    }
+  }
+]
