@@ -1,12 +1,12 @@
-# storefront-router
+# E-Com Plus Storefront Router
 
-[![CodeFactor](https://www.codefactor.io/repository/github/ecomclub/storefront-router/badge)](https://www.codefactor.io/repository/github/ecomclub/storefront-router)
+[![CodeFactor](https://www.codefactor.io/repository/github/ecomplus/storefront-router/badge)](https://www.codefactor.io/repository/github/ecomplus/storefront-router)
 [![npm version](https://img.shields.io/npm/v/@ecomplus/storefront-router.svg)](https://www.npmjs.org/@ecomplus/storefront-router)
-[![license mit](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 SPA/SSR router for E-Com Plus storefront
 
-[Changelog](https://github.com/ecomclub/storefront-router/blob/master/CHANGELOG.md)
+[CHANGELOG](https://github.com/ecomplus/storefront-router/blob/master/CHANGELOG.md)
 
 ## Usage
 
@@ -46,24 +46,20 @@ router.list()
   })
 ```
 
-### Dependencies
+### Installation
 
-It requires and _may not_ include:
-
-- `core-js`;
-- [`@ecomplus/utils`](https://github.com/ecomclub/ecomplus-utils);
-- [`@ecomplus/client`](https://github.com/ecomclub/ecomplus-client);
-
-#### Node.js
-
-```bash
-npm i --save @ecomplus/utils @ecomplus/storefront-router
-```
+It _may_ require and doesn't include `core-js` (optional) and [`@ecomplus/utils`](https://developers.e-com.plus/utils/) (peer dependency).
 
 #### Webpack
 
 ```bash
 npm i --save core-js @ecomplus/utils @ecomplus/storefront-router
+```
+
+#### Node.js
+
+```bash
+npm i --save @ecomplus/utils @ecomplus/storefront-router
 ```
 
 #### CDN
@@ -72,5 +68,4 @@ npm i --save core-js @ecomplus/utils @ecomplus/storefront-router
 <script src="https://cdn.jsdelivr.net/npm/@ecomplus/storefront-router/dist/ecom-router.var.min.js"></script>
 ```
 
-`ecomUtils` and `ecomClient` libraries
-**must be included separately** and available on window scope.
+When importing from CDN, `ecomUtils` and `ecomClient` libraries **must be included separately** and available on window scope.
