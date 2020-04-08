@@ -1,6 +1,6 @@
 # E-Com Plus Storefront Router
 
-[![CodeFactor](https://www.codefactor.io/repository/github/ecomplus/storefront-router/badge)](https://www.codefactor.io/repository/github/ecomplus/storefront-router)
+[![Publish](https://github.com/ecomplus/passport-client/workflows/Publish/badge.svg)](https://github.com/ecomplus/passport-client/actions?workflow=Publish) [![CodeFactor](https://www.codefactor.io/repository/github/ecomplus/storefront-router/badge)](https://www.codefactor.io/repository/github/ecomplus/storefront-router)
 [![npm version](https://img.shields.io/npm/v/@ecomplus/storefront-router.svg)](https://www.npmjs.org/@ecomplus/storefront-router)
 [![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
