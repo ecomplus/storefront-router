@@ -53,6 +53,9 @@ router.list()
       console.log(route.path)
       console.log(route.resource)
       console.log(route._id)
+      if (route.name) {
+        console.log('Not a product', route.name)
+      }
       router.resolve(route)
         .then(context => {
           console.log(context.body)
