@@ -41,6 +41,7 @@ const map = (self, [path]) => {
  * [E-Com Plus Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
  * @property {string} _id - Route document Object ID from
  * [E-Com Plus Store API]{@link https://developers.e-com.plus/docs/api/#/store/}
+ * @property {string} [name] - Route document name (not set on products)
  */
 
 /**
