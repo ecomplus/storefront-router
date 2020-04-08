@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/ecomplus/storefront-router/compare/v2.0.1...v2.1.0) (2020-04-08)
+
+
+### Features
+
+* **list:** add 'name' field to route object (when available) ([f7484c8](https://github.com/ecomplus/storefront-router/commit/f7484c8e4d9e846212b6c4823b267f46a115ca55))
+
 ### [2.0.1](https://github.com/ecomclub/storefront-router/compare/v2.0.0...v2.0.1) (2020-01-02)
 
 ## [2.0.0](https://github.com/ecomclub/storefront-router/compare/v1.0.1...v2.0.0) (2020-01-02)
