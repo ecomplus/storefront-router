@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/ecomplus/storefront-router/compare/v2.1.0...v2.2.0) (2020-04-30)
+
+
+### Features
+
+* **list:** add sku field to products ([d1379dc](https://github.com/ecomplus/storefront-router/commit/d1379dc4b7fb42d47158fe9a5952390990341c22))
+
 ## [2.1.0](https://github.com/ecomplus/storefront-router/compare/v2.0.1...v2.1.0) (2020-04-08)
 
 
