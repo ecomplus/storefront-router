@@ -50,7 +50,7 @@
     "docdash": "^1.2.0",
     "husky": "^3.1.0",
     "jsdoc": "^3.6.11",
-    "standard": "^16.0.4",
+    "standard": "^17.0.0",
     "standard-version": "^9.3.2",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
