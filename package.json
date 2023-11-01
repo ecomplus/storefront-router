@@ -34,19 +34,19 @@
     "@ecomplus/utils": "^1.4.1"
   },
   "optionalDependencies": {
-    "core-js": "^3.32.2"
+    "core-js": "^3.33.2"
   },
   "dependencies": {
     "@ecomplus/client": "^2.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/preset-env": "^7.22.20",
-    "@commitlint/cli": "^17.7.2",
-    "@commitlint/config-conventional": "^17.7.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
     "@ecomplus/utils": "^1.4.1",
     "babel-loader": "^8.3.0",
-    "core-js": "^3.32.2",
+    "core-js": "^3.33.2",
     "docdash": "^2.0.2",
     "husky": "^3.1.0",
     "jsdoc": "^4.0.2",
